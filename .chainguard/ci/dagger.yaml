@@ -43,7 +43,7 @@ checks:
           ref: 4d9b772d464a0f3bfbf9f1e6e350859e31bf8cec # v1.0.0
     vars:
       # The unit tests, in a Chainguard Python container on the engine.
-      INPUT_SHELL: container | from cgr.dev/chainguard/python:latest-dev | with-directory /src $(host | directory . --exclude .chainguard-checks) | with-workdir /src | with-exec python -m unittest discover -s tests -t . -v | stderr
+      INPUT_SHELL: container | from cgr.dev/chainguard/python:latest-dev | with-directory /src $(host | directory . --exclude .chainguard-checks) | with-workdir /src | with-exec -- python -m unittest discover -s tests -t . -v | stderr
       # INPUT_MODULE: github.com/owner/repo/ci
       # INPUT_VERB: check
       # INPUT_WORKDIR: .
