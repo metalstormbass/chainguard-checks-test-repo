@@ -14,3 +14,9 @@ def greet(name, config):
     greeting = config.get("greeting", "Hello")
     punctuation = "!" if config.get("excited", False) else "."
     return f"{greeting}, {name}{punctuation}"
+
+
+def farewell(name, config):
+    """Say goodbye to name, in the configured style."""
+    punctuation = "!" if config.get("excited", False) else "."
+    return f"Goodbye, {name}{punctuation}"
